@@ -96,15 +96,15 @@ if (file_exists(__DIR__ . "/Menu.php")) {
 }
 
 // Step 3: Move 2025_08_09_182304_create_menus_table.php to database/migrations
-echo "\n📝 Moving 2025_08_09_182304_create_menus_table.php...\n";
-if (file_exists(__DIR__ . "/2025_08_09_182304_create_menus_table.php")) {
+echo "\n📝 Moving 2025_08_13_103312_create_menus_table.php...\n";
+if (file_exists(__DIR__ . "/2025_08_13_103312_create_menus_table.php")) {
     if (!is_dir("database/migrations")) {
         mkdir("database/migrations", 0777, true);
     }
-    rename(__DIR__ . "/2025_08_09_182304_create_menus_table.php", "database/migrations/2025_08_09_182304_create_menus_table.php");
-    echo "✅ 2025_08_09_182304_create_menus_table.php moved to database/migrations/\n";
+    rename(__DIR__ . "/2025_08_13_103312_create_menus_table.php", "database/migrations/2025_08_13_103312_create_menus_table.php");
+    echo "✅ 2025_08_13_103312_create_menus_table.php moved to database/migrations/\n";
 } else {
-    echo "⚠️ 2025_08_09_182304_create_menus_table.php not found.\n";
+    echo "⚠️ 2025_08_13_103312_create_menus_table.php not found.\n";
 }
 
 // Step 4: Replace login.blade.php in resources/views/auth
@@ -132,16 +132,16 @@ if (file_exists(__DIR__ . "/register.blade.php")) {
 }
 
 // Step 6: Create and replace ViewServiceProvider
-runCommand("php artisan make:provider ViewServiceProvider", $os);
-echo "\n📝 Replacing ViewServiceProvider.php...\n";
-if (file_exists(__DIR__ . "/ViewServiceProvider.php")) {
+runCommand("php artisan make:provider SidebarServiceProvider", $os);
+echo "\n📝 Replacing SidebarServiceProvider.php...\n";
+if (file_exists(__DIR__ . "/SidebarServiceProvider.php")) {
     if (!is_dir("app/Providers")) {
         mkdir("app/Providers", 0777, true);
     }
-    rename(__DIR__ . "/ViewServiceProvider.php", "app/Providers/ViewServiceProvider.php");
-    echo "✅ ViewServiceProvider.php replaced in app/Providers/\n";
+    rename(__DIR__ . "/SidebarServiceProvider.php", "app/Providers/SidebarServiceProvider.php");
+    echo "✅ SidebarServiceProvider.php replaced in app/Providers/\n";
 } else {
-    echo "⚠️ ViewServiceProvider.php not found.\n";
+    echo "⚠️ SidebarServiceProvider.php not found.\n";
 }
 
 // Step 7: Move header.blade.php into Laravel views/layouts
@@ -178,6 +178,17 @@ if (file_exists(__DIR__ . "/sidebar.blade.php")) {
     echo "✅ sidebar.blade.php moved to resources/views/layouts/\n";
 } else {
     echo "⚠️ sidebar.blade.php not found.\n";
+}
+
+echo "\n📝 Moving app.blade.php...\n";
+if (file_exists(__DIR__ . "/app.blade.php")) {
+    if (!is_dir("resources/views/layouts")) {
+        mkdir("resources/views/layouts", 0777, true);
+    }
+    rename(__DIR__ . "/app.blade.php", "resources/views/layouts/app.blade.php");
+    echo "✅ app.blade.php moved to resources/views/layouts/\n";
+} else {
+    echo "⚠️ app.blade.php not found.\n";
 }
 
 // Step 10: Move sidebar.php into Laravel config folder
