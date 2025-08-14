@@ -83,6 +83,46 @@ runCommand("php artisan breeze:install", $os);
 // runCommand("npm install", $os);
 // runCommand("npm run build", $os);
 
+echo "\n📝 Moving All Assets...\n";
+
+$assetsDir = __DIR__ . "/assets";
+$cssDir = __DIR__ . "/css";
+$jsDir = __DIR__ . "/js";
+$publicDir = "public";
+
+if (is_dir($assetsDir) || is_dir($cssDir) || is_dir($jsDir)) {
+    // Create public directory if it doesn't exist
+    if (!is_dir($publicDir)) {
+        mkdir($publicDir, 0777, true);
+    }
+
+    // Move assets directory
+    if (is_dir($assetsDir)) {
+        rename($assetsDir, "$publicDir/assets");
+        echo "✅ Assets moved to public/assets/\n";
+    } else {
+        echo "⚠️ Assets directory not found.\n";
+    }
+
+    // Move css directory
+    if (is_dir($cssDir)) {
+        rename($cssDir, "$publicDir/css");
+        echo "✅ CSS moved to public/css/\n";
+    } else {
+        echo "⚠️ CSS directory not found.\n";
+    }
+
+    // Move js directory
+    if (is_dir($jsDir)) {
+        rename($jsDir, "$publicDir/js");
+        echo "✅ JS moved to public/js/\n";
+    } else {
+        echo "⚠️ JS directory not found.\n";
+    }
+} else {
+    echo "⚠️ No assets, css, or js directories found in repository root.\n";
+}
+
 // 1.1 Replace web.blade.php
 echo "\n📝 Moving web.php...\n";
 if (file_exists(__DIR__ . "/web.php")) {
