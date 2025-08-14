@@ -80,8 +80,20 @@ chdir($installPath);
 echo "\n📦 Installing Laravel Breeze...\n";
 runCommand("composer require laravel/breeze --dev", $os);
 runCommand("php artisan breeze:install", $os);
-runCommand("npm install", $os);
-runCommand("npm run build", $os);
+// runCommand("npm install", $os);
+// runCommand("npm run build", $os);
+
+// 1.1 Replace web.blade.php
+echo "\n📝 Moving web.php...\n";
+if (file_exists(__DIR__ . "/web.php")) {
+    if (!is_dir("routes")) {
+        mkdir("routes", 0777, true);
+    }
+    rename(__DIR__ . "/web.php", "routes/web.php");
+    echo "✅ web.php moved to routes/\n";
+} else {
+    echo "⚠️ web.php not found.\n";
+}
 
 // Step 2: Move Menu.php to app/Models
 echo "\n📝 Moving Menu.php...\n";
