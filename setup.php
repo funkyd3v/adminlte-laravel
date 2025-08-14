@@ -215,4 +215,10 @@ if (file_exists(__DIR__ . "/sidebar.php")) {
     echo "⚠️ sidebar.php not found.\n";
 }
 
+
+// Install laravel debugbar
+echo "\n📦 Installing Laravel Debugbar...\n";
+runCommand("composer require barryvdh/laravel-debugbar --dev", $os);
+
+
 echo "\n🎉 Setup completed successfully!\n";
