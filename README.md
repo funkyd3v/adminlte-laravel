@@ -27,4 +27,4 @@ cd tailadmin-laravel
 php setup.php
 ```
 
-**Menu items will come from either database table (menus) or config/sidebar.php. If you want database driven then use migration file 2025_08_09_182304_create_menus_table.php.**
+**Menu items will come from either database table (menus) or config/sidebar.php. If you want database driven then use migration file 2025_08_13_103312_create_menus_table.php.**
