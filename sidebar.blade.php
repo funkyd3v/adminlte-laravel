@@ -5,7 +5,7 @@
             data-accordion="false" id="navigation">
             @foreach ($menus as $menu)
                 <li class="nav-item">
-                    <a href="{{ !$menu->children->isNotEmpty() ? $menu->url : '#' }}" class="nav-link">
+                    <a href="{{ !$menu->children->isNotEmpty() ? route($menu->route) : '#' }}" class="nav-link">
                         <i class="nav-icon {{ $menu->icon }}"></i>
                         <p>
                             {{ $menu->title }}
@@ -16,7 +16,7 @@
                         <ul class="nav nav-treeview">
                             @foreach ($menu->children as $child)
                                 <li class="nav-item">
-                                    <a href="{{ $child->url }}" class="nav-link">
+                                    <a href="{{ route($child->route) }}" class="nav-link">
                                         <i class="nav-icon {{ $child->icon }}"></i>
                                         <p>{{ $child->title }}</p>
                                     </a>
