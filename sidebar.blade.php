@@ -9,6 +9,9 @@
                         <i class="nav-icon {{ $menu->icon }}"></i>
                         <p>
                             {{ $menu->title }}
+                            @if ($menu->children->isNotEmpty())
+                                <i class="right fas fa-angle-down"></i>
+                            @endif
                         </p>
                     </a>
 
@@ -30,3 +33,4 @@
         <!--end::Sidebar Menu-->
     </nav>
 </div>
+
