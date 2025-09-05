@@ -9,26 +9,26 @@ return [
     [
         'title' => 'Dashboard',
         'icon'  => 'bi bi-speedometer',
-        'url'   => 'dashboard',
+        'route'   => 'dashboard',
         'order' => 1,
         'children' => [] // No submenus
     ],
     [
         'title' => 'Users',
         'icon'  => 'bi bi-people',
-        'url'   => 'dashboard', // Parent menu has no direct link
+        'route'   => '', // Parent menu has no direct link
         'order' => 2,
         'children' => [
             [
                 'title' => 'All Users',
                 'icon'  => 'bi bi-list',
-                'url'   => 'dashboard',
+                'route'   => 'dashboard',
                 'order' => 1,
             ],
             [
                 'title' => 'Create User',
                 'icon'  => 'bi bi-plus',
-                'url'   => 'dashboard',
+                'route'   => 'dashboard',
                 'order' => 2,
             ]
         ]
