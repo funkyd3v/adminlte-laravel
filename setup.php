@@ -263,7 +263,7 @@ if (file_exists(__DIR__ . "/app.blade.php")) {
     if (!is_dir("resources/views/layouts")) {
         mkdir("resources/views/layouts", 0777, true);
     }
-    copy(__DIR__ . "/app.blade.php", "resources/viewslayouts/app.blade.php");
+    copy(__DIR__ . "/app.blade.php", "resources/views/layouts/app.blade.php");
     echo "✅ app.blade.php copied to resources/views/layouts/\n";
 } else {
     echo "⚠️ app.blade.php not found.\n";
