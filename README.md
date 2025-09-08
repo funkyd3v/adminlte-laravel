@@ -23,7 +23,7 @@ Make sure you have:
 ## How to use it?
 ```
 git clone https://github.com/funkyd3v/adminlte-laravel.git
-cd tailadmin-laravel
+cd adminlte-laravel
 php setup.php
 ```
 
