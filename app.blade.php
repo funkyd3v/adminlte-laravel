@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{{ config('app.name', 'Laravel') }} | Dashboard</title>
+    <title>@yield('title')</title>
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <meta name="color-scheme" content="light dark" />
@@ -99,11 +99,9 @@
       <main class="app-main">
         <!--begin::App Content-->
         <div class="app-content">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            @yield('content')
-          </div>
-          <!--end::Container-->
+     
+          @yield('content')
+
         </div>
         <!--end::App Content-->
       </main>
