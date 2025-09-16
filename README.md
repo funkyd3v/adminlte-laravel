@@ -26,5 +26,3 @@ git clone https://github.com/funkyd3v/adminlte-laravel.git
 cd adminlte-laravel
 php setup.php
 ```
-
-**Menu items will come from either database table (menus) or config/sidebar.php. If you want database driven then use migration file 2025_08_13_103312_create_menus_table.php.**
