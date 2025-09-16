@@ -1,36 +1,44 @@
 <div class="sidebar-wrapper">
-    <nav class="mt-2">
-        <!--begin::Sidebar Menu-->
-        <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation" aria-label="Main navigation"
-            data-accordion="false" id="navigation">
-            @foreach ($menus as $menu)
-                <li class="nav-item">
-                    <a href="{{ !$menu->children->isNotEmpty() ? route($menu->route) : '#' }}" class="nav-link">
-                        <i class="nav-icon {{ $menu->icon }}"></i>
-                        <p>
-                            {{ $menu->title }}
-                            @if ($menu->children->isNotEmpty())
-                                <i class="right fas fa-angle-down"></i>
-                            @endif
-                        </p>
-                    </a>
-
-                    @if ($menu->children->isNotEmpty())
-                        <ul class="nav nav-treeview">
-                            @foreach ($menu->children as $child)
-                                <li class="nav-item">
-                                    <a href="{{ route($child->route) }}" class="nav-link">
-                                        <i class="nav-icon {{ $child->icon }}"></i>
-                                        <p>{{ $child->title }}</p>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
-            @endforeach
+  <nav class="mt-2">
+    <!--begin::Sidebar Menu-->
+    <ul
+      class="nav sidebar-menu flex-column"
+      data-lte-toggle="treeview"
+      role="navigation"
+      aria-label="Main navigation"
+      data-accordion="false"
+      id="navigation"
+    >
+      <li class="nav-item">
+        <a href="{{ route('dashboard') }}" class="nav-link">
+          <i class="nav-icon bi bi-palette"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon bi bi-box-seam-fill"></i>
+          <p>
+            Users
+            <i class="nav-arrow bi bi-chevron-right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon bi bi-circle"></i>
+              <p>All Users</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon bi bi-circle"></i>
+              <p>Create User</p>
+            </a>
+          </li>
         </ul>
-        <!--end::Sidebar Menu-->
-    </nav>
+      </li>
+    </ul>
+    <!--end::Sidebar Menu-->
+  </nav>
 </div>
-
