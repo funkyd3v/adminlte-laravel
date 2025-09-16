@@ -162,28 +162,28 @@ if (file_exists(__DIR__ . "/web.php")) {
 }
 
 // Step 2: Copy Menu.php to app/Models
-echo "\n📝 Copying Menu.php...\n";
-if (file_exists(__DIR__ . "/Menu.php")) {
-    if (!is_dir("app/Models")) {
-        mkdir("app/Models", 0777, true);
-    }
-    copy(__DIR__ . "/Menu.php", "app/Models/Menu.php");
-    echo "✅ Menu.php copied to app/Models/\n";
-} else {
-    echo "⚠️ Menu.php not found.\n";
-}
+// echo "\n📝 Copying Menu.php...\n";
+// if (file_exists(__DIR__ . "/Menu.php")) {
+//     if (!is_dir("app/Models")) {
+//         mkdir("app/Models", 0777, true);
+//     }
+//     copy(__DIR__ . "/Menu.php", "app/Models/Menu.php");
+//     echo "✅ Menu.php copied to app/Models/\n";
+// } else {
+//     echo "⚠️ Menu.php not found.\n";
+// }
 
 // Step 3: Copy 2025_08_13_103312_create_menus_table.php to database/migrations
-echo "\n📝 Copying 2025_08_13_103312_create_menus_table.php...\n";
-if (file_exists(__DIR__ . "/2025_08_13_103312_create_menus_table.php")) {
-    if (!is_dir("database/migrations")) {
-        mkdir("database/migrations", 0777, true);
-    }
-    copy(__DIR__ . "/2025_08_13_103312_create_menus_table.php", "database/migrations/2025_08_13_103312_create_menus_table.php");
-    echo "✅ 2025_08_13_103312_create_menus_table.php copied to database/migrations/\n";
-} else {
-    echo "⚠️ 2025_08_13_103312_create_menus_table.php not found.\n";
-}
+// echo "\n📝 Copying 2025_08_13_103312_create_menus_table.php...\n";
+// if (file_exists(__DIR__ . "/2025_08_13_103312_create_menus_table.php")) {
+//     if (!is_dir("database/migrations")) {
+//         mkdir("database/migrations", 0777, true);
+//     }
+//     copy(__DIR__ . "/2025_08_13_103312_create_menus_table.php", "database/migrations/2025_08_13_103312_create_menus_table.php");
+//     echo "✅ 2025_08_13_103312_create_menus_table.php copied to database/migrations/\n";
+// } else {
+//     echo "⚠️ 2025_08_13_103312_create_menus_table.php not found.\n";
+// }
 
 // Step 4: Copy login.blade.php in resources/views/auth
 echo "\n📝 Copying login.blade.php...\n";
@@ -210,17 +210,17 @@ if (file_exists(__DIR__ . "/register.blade.php")) {
 }
 
 // Step 6: Create and copy SidebarServiceProvider
-runCommand("php artisan make:provider SidebarServiceProvider", $os);
-echo "\n📝 Copying SidebarServiceProvider.php...\n";
-if (file_exists(__DIR__ . "/SidebarServiceProvider.php")) {
-    if (!is_dir("app/Providers")) {
-        mkdir("app/Providers", 0777, true);
-    }
-    copy(__DIR__ . "/SidebarServiceProvider.php", "app/Providers/SidebarServiceProvider.php");
-    echo "✅ SidebarServiceProvider.php copied to app/Providers/\n";
-} else {
-    echo "⚠️ SidebarServiceProvider.php not found.\n";
-}
+// runCommand("php artisan make:provider SidebarServiceProvider", $os);
+// echo "\n📝 Copying SidebarServiceProvider.php...\n";
+// if (file_exists(__DIR__ . "/SidebarServiceProvider.php")) {
+//     if (!is_dir("app/Providers")) {
+//         mkdir("app/Providers", 0777, true);
+//     }
+//     copy(__DIR__ . "/SidebarServiceProvider.php", "app/Providers/SidebarServiceProvider.php");
+//     echo "✅ SidebarServiceProvider.php copied to app/Providers/\n";
+// } else {
+//     echo "⚠️ SidebarServiceProvider.php not found.\n";
+// }
 
 // Step 7: Copy header.blade.php into Laravel views/layouts
 echo "\n📝 Copying header.blade.php...\n";
@@ -270,16 +270,16 @@ if (file_exists(__DIR__ . "/app.blade.php")) {
 }
 
 // Step 10: Copy sidebar.php into Laravel config folder
-echo "\n⚙️ Copying sidebar.php...\n";
-if (file_exists(__DIR__ . "/sidebar.php")) {
-    if (!is_dir("config")) {
-        mkdir("config", 0777, true);
-    }
-    copy(__DIR__ . "/sidebar.php", "config/sidebar.php");
-    echo "✅ sidebar.php copied to config/\n";
-} else {
-    echo "⚠️ sidebar.php not found.\n";
-}
+// echo "\n⚙️ Copying sidebar.php...\n";
+// if (file_exists(__DIR__ . "/sidebar.php")) {
+//     if (!is_dir("config")) {
+//         mkdir("config", 0777, true);
+//     }
+//     copy(__DIR__ . "/sidebar.php", "config/sidebar.php");
+//     echo "✅ sidebar.php copied to config/\n";
+// } else {
+//     echo "⚠️ sidebar.php not found.\n";
+// }
 
 // Install laravel debugbar
 echo "\n📦 Installing Laravel Debugbar...\n";
