@@ -9,12 +9,16 @@
       data-accordion="false"
       id="navigation"
     >
+      <!--begin::Dashboard-->
       <li class="nav-item">
         <a href="{{ route('dashboard') }}" class="nav-link">
           <i class="nav-icon bi bi-palette"></i>
           <p>Dashboard</p>
         </a>
       </li>
+      <!--end::Dashboard-->
+
+      <!--begin::Users-->
       <li class="nav-item">
         <a href="#" class="nav-link">
           <i class="nav-icon bi bi-box-seam-fill"></i>
@@ -38,6 +42,7 @@
           </li>
         </ul>
       </li>
+      <!--end::Users-->
     </ul>
     <!--end::Sidebar Menu-->
   </nav>
